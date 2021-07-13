@@ -1,6 +1,8 @@
 <?
-$deldir = "bitrix";
-rmdirr($deldir);
+$deldir = array("upload" , "local", "bitrix", "include", "new", "personal", ".git", "vendor");
+foreach($deldir as $del_add){
+    rmdirr($del_add);
+}
 
 function rmdirr($dirname)
 {
@@ -20,4 +22,3 @@ function rmdirr($dirname)
     $dir->close();
     return rmdir($dirname);
 }
-?>
